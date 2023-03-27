@@ -1,35 +1,29 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import dividor from './assets/pattern-divider-mobile.svg'
+
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// Step 1: Break the UI into a component hierarchy
+// Step 2: Build a static version in React
+// Step 3: Find the minimal but complete representation of UI state
+// Step 4: Identify where your state should live
+// Step 5: Add inverse data flow
 
-  return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
-}
+
+function App() {
+  
+} 
+
+// The card, 
+
+// The title for the card "advice # 117"
+
+// The advice -> which will be fetched in the API
+
+// The dividor
+
+// The button 
 
 export default App

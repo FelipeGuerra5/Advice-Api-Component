@@ -57,6 +57,7 @@ html, body {
 .adviceP {
     margin-top: 8px;
     text-align: center;
+    color: var(--Light-Cyan)
 }
 .advice {
     margin: 0px;
@@ -135,6 +136,7 @@ html, body {
     .adviceP {
         margin-top: 8px;
         text-align: center;
+        color: var(--Light-Cyan)
     }
     .advice {
         margin: 0px;

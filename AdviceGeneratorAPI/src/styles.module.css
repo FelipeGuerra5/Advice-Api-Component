@@ -1,5 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;600;800&display=swap');
+* {
+    --Light-Cyan: hsl(193, 38%, 86%);
+    --Neon-Green: hsl(150, 100%, 66%);
+    --Grayish-Blue: hsl(217, 19%, 38%);
+    --Dark-Grayish-Blue: hsl(217, 19%, 24%);
+    --Dark-Blue: hsl(218, 23%, 16%);
+    --Font: Manrope;
+}
+
+html, body {
+    background-color: var(--Dark-Blue);
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .card {
-    width: 300px;;
-    height: 300px;
-    background-color: whitesmoke;
+    width: 500px;;
+    height: 290px;
+    position: relative;
+    background-color: var(--Dark-Grayish-Blue);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 30px;
+}
+
+.title {
+    font-family: var(--Font);
+    letter-spacing: 5px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--Neon-Green);
+
+}
+
+
+.next {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background-color: var(--Neon-Green);
+}
+
+.adviceP {
+    margin-top: 8px;
+}
+.advice {
+    margin: 0px;
+    font-family: var(--Font);
+    font-size: 28px;
+    font-weight: 800;
+    padding: 0px 20px;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.dividor {
+    width: 80%;
+}
+
+.dividorSvg {
+    width: 400px;
+    content:url("./assets/pattern-divider-desktop.svg")
+}
+
+.shadow {
+    position: absolute;
+    bottom: -60px;
+    /* parent width 500px */
+    left: 190px;
+    
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: radial-gradient(
+        10% 10%,
+        var(--Neon-Green),
+        transparent
+    );
+}
+
+.shadow:hover {
+    transition: 3000ms;
+    background: radial-gradient(
+        40% 40%,
+        var(--Neon-Green),
+        transparent
+    );
+    cursor: pointer;
+}
+
+@media screen and (max-width: 375px) and (orientation: portrait) {
+    .card {
+        width: 320px;
+        height: 290px;
+        position: relative;
+        background-color: var(--Dark-Grayish-Blue);
+        border-radius: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 30px;
+    }
+    
+    .title {
+        font-family: var(--Font);
+        letter-spacing: 3px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--Neon-Green);
+    
+    }
+    
+    .adviceP {
+        margin-top: 8px;
+        text-align: center;
+    }
+    .advice {
+        margin: 0px;
+        font-family: var(--Font);
+        font-size: 20px;
+        font-weight: 800;
+        padding: 0px 20px;
+        display:flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    
+    .dividor {
+        width: 80%;
+    }
+    
+    .dividorSvg {
+        width: 300px;
+        content:url("./assets/pattern-divider-mobile.svg")
+    }
+    
+    .shadow {
+        position: absolute;
+        /* .card {
+            width: 320px;
+            height: 290px; }*/
+        bottom: -60px;
+        left: 100px;
+        
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        background: radial-gradient(
+            10% 10%,
+            var(--Neon-Green),
+            transparent
+            );
+        }
+        
+        .shadow:hover {
+            transition: 3000ms;
+            background: radial-gradient(
+                40% 40%,
+                var(--Neon-Green),
+                transparent
+                );
+                cursor: pointer;
+        }
+
+        .next {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: var(--Neon-Green);
+        }
 }

@@ -14,7 +14,6 @@ function App() {
   const [counter, setCounter] = useState(Number(localCounter ? localCounter: 1))
   const [advice, setAdvice] = useState()
 
-  
   useEffect(() => {
     axios
     .get(`https://api.adviceslip.com/advice/${counter}`)
@@ -23,10 +22,8 @@ function App() {
         setAdvice(response.data.slip.advice)
         localStorage.setItem("counter", counter)
       } if (response.data.message) {
-        // setCounter(1) -> Should be this, 
-        // however the API does not return
-        // at the ID: 22 so:
-        counter == 225 ? setCounter(1) : setCounter( counter += 1) 
+        // API -> Has error response on ID:22 and have a total of 224 ID's.
+        counter == 225 ? setCounter(1) : setCounter(counter + 1) 
       }
     })
     .catch(err => console.error(err))

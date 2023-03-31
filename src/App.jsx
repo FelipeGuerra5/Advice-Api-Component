@@ -11,30 +11,30 @@ if (localCounter) {
 }
 
 function App() {
-  const [counter, setCounter] = useState(Number(localCounter ? localCounter: 1))
+  const [counter, setCounter] = useState(Number(localCounter ? localCounter : 1))
   const [advice, setAdvice] = useState()
 
   useEffect(() => {
     axios
-    .get(`https://api.adviceslip.com/advice/${counter}`)
-    .then(response => {
-      if (response.data.slip) {
-        setAdvice(response.data.slip.advice)
-        localStorage.setItem("counter", counter)
-      } if (response.data.message) {
-        // API -> Has error response on ID:22 and have a total of 224 ID's.
-        counter == 225 ? setCounter(1) : setCounter(counter + 1) 
-      }
-    })
-    .catch(err => console.error(err))
-  },[counter])
-  
+      .get(`https://api.adviceslip.com/advice/${counter}`)
+      .then(response => {
+        if (response.data.slip) {
+          setAdvice(response.data.slip.advice)
+          localStorage.setItem("counter", counter)
+        } if (response.data.message) {
+          // API -> Has error response on ID:22 and have a total of 224 ID's.
+          counter == 225 ? setCounter(1) : setCounter(counter + 1)
+        }
+      })
+      .catch(err => console.error(err))
+  }, [counter])
+
   return (
-    <Card 
-      counter={counter} 
+    <Card
+      counter={counter}
       setCounter={setCounter}
-      advice={advice} 
-      />
+      advice={advice}
+    />
   )
 }
 
@@ -44,47 +44,43 @@ function Card({ counter, advice, setCounter }) {
     <div className={styles.card}>
       <Title counter={counter} />
       <Advice advice={advice} />
-      <Dividor />
+      <divisor />
       <Button counter={counter} setCounter={setCounter} />
     </div>
   )
 }
 
-// The title for the card "advice # 117"
 function Title({ counter }) {
-  
+
   const title = `ADVICE #${counter}`
   return (
     <div>
       <p className={styles.title} >{title}</p>
     </div>
-    )
+  )
 }
 
-// The advice -> which will be fetched in the API
-function Advice ({ advice }) {
-  return(
+function Advice({ advice }) {
+  return (
     <div className={styles.advice} >
       <p className={styles.adviceP} >"{advice}"</p>
-    </div>
-    )
-}
-
-// The dividor
-function Dividor () {
-  return(
-    <div className='dividor'>
-      <img className={styles.dividorSvg} />
     </div>
   )
 }
 
-// The button 
+function divisor() {
+  return (
+    <div className='divisor'>
+      <img src="" alt="" className={styles.divisorSvg} />
+    </div>
+  )
+}
+
 function Button({ counter, setCounter }) {
-  return(
-    <div className={styles.shadow} onClick={(e)=>setCounter(counter += 1)} >
+  return (
+    <div className={styles.shadow} onClick={(e) => setCounter(counter += 1)} >
       <div className={styles.next} >
-        <img src={dice} className={dice}/>
+        <img src={dice} className={dice} alt="" />
       </div>
     </div>
   )
